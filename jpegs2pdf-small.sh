@@ -22,7 +22,7 @@ shift;
 AUTHOR="Patrick Schlueter"
 
 # Downscale images and convert them to a pdf
-convert -resize "${MAX_RES}x${MAX_RES}" -quality 50 "$@" "${TMP_FILE}"
+convert -units pixelsperinch -density 72 -page a4 -resize "${MAX_RES}x${MAX_RES}" -quality 50 "$@" "${TMP_FILE}"
 
 # Edit exif tags (metadata)
 exiftool -Title="$TITLE" -Author="$AUTHOR" -Producer="" "${TMP_FILE}"
