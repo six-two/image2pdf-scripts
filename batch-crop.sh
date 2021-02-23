@@ -20,5 +20,4 @@ do
   new_file="$new_path_dir/$file_name"
   echo "Writing $new_file"
   convert "$file" -crop "$dimensions" "$new_file"
-  #convert "$new_file" -crop "$dimensions" "$file"
 done
